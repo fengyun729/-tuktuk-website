@@ -292,18 +292,23 @@
 
         /* 表单元素语言切换 */
         .form-group label[data-lang="sw"],
-        button[data-lang="sw"] {
+        .submit-btn[data-lang="sw"] {
             display: none;
         }
 
         body.swahili .form-group label[data-lang="sw"],
-        body.swahili button[data-lang="sw"] {
+        body.swahili .submit-btn[data-lang="sw"] {
             display: block;
         }
 
         body.swahili .form-group label[data-lang="en"],
-        body.swahili button[data-lang="en"] {
+        body.swahili .submit-btn[data-lang="en"] {
             display: none;
+        }
+
+        /* 确保表单输入框始终显示 */
+        .form-group input {
+            display: block !important;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
