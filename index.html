@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Tuk-Tuk Rental in Dar es Salaam - Tenaich Company Limited</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/tuktuk-hero.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            background-color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .features {
+            padding: 80px 20px;
+            background: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .pricing {
+            padding: 80px 20px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            color: #4CAF50;
+            margin: 20px 0;
+        }
+
+        .form-section {
+            padding: 80px 20px;
+            background: #f9f9f9;
+        }
+
+        .registration-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .submit-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .submit-btn:hover {
+            background: #45a049;
+        }
+
+        .about-section {
+            padding: 80px 20px;
+            background: #fff;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-section {
+            padding: 80px 20px;
+            background: #f9f9f9;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .product-details {
+            padding: 80px 20px;
+            background: #fff;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .product-card-content {
+            padding: 20px;
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-switcher button {
+            background: none;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .language-switcher button i {
+            font-size: 24px;
+        }
+
+        .language-switcher button:hover {
+            color: #4CAF50;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+            padding: 10px 0;
+            display: none;
+            min-width: 150px;
+            z-index: 1001;
+        }
+
+        .language-switcher:hover .language-dropdown {
+            display: block;
+        }
+
+        .language-dropdown button {
+            width: 100%;
+            padding: 10px 20px;
+            text-align: left;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .language-dropdown button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .language-dropdown button.active {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        [data-lang="en"] {
+            display: block;
+        }
+
+        [data-lang="sw"] {
+            display: none;
+        }
+
+        body.swahili [data-lang="sw"] {
+            display: block;
+        }
+
+        body.swahili [data-lang="en"] {
+            display: none;
+        }
+
+        /* 确保下拉菜单按钮不受语言切换影响 */
+        .language-dropdown button[data-lang] {
+            display: flex !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="language-switcher">
+        <button>
+            <i class="fas fa-globe"></i>
+        </button>
+        <div class="language-dropdown">
+            <button onclick="switchLanguage('en')" data-lang="en">
+                <i class="fas fa-globe"></i>
+                English
+            </button>
+            <button onclick="switchLanguage('sw')" data-lang="sw">
+                <i class="fas fa-globe"></i>
+                Kiswahili
+            </button>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-lang="en">Revolutionary Electric Tuk-Tuk Rental</h1>
+            <h1 data-lang="sw">Usafirishaji wa Tuk-Tuk ya Umeme</h1>
+            <p data-lang="en">Experience the future of urban mobility in Dar es Salaam</p>
+            <p data-lang="sw">Jifunze usafiri wa mjini wa siku za usoni huko Dar es Salaam</p>
+            <a href="#register" class="submit-btn" data-lang="en">Register Now</a>
+            <a href="#register" class="submit-btn" data-lang="sw">Jisajili Sasa</a>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 data-lang="en">Welcome to Tenaich Company Limited</h2>
+                <h2 data-lang="sw">Karibu Tenaich Company Limited</h2>
+                <p data-lang="en">We are an innovative electric vehicle company committed to leading the trend of green travel. We focus on developing, producing and selling high-quality electric vehicles to meet the needs of modern consumers for sustainable modes of transportation.</p>
+                <p data-lang="sw">Sisi ni kampuni ya magari ya umeme inayojitolea kuongoza mwenendo wa usafiri wa kijani. Tunazingatia kuendeleza, kuzalisha na kuuza magari ya umeme ya hali ya juu ili kukidhi mahitaji ya watumiaji wa kisasa kwa njia endelevu za usafiri.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;" data-lang="en">Why Choose Our Electric Tuk-Tuk?</h2>
+            <h2 style="text-align: center; margin-bottom: 40px;" data-lang="sw">Kwa Nini Kuchagua Tuk-Tuk Yetu ya Umeme?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3 data-lang="en">Zero Emissions</h3>
+                    <h3 data-lang="sw">Hakuna Uchafuzi</h3>
+                    <p data-lang="en">100% electric powered, contributing to a cleaner Dar es Salaam</p>
+                    <p data-lang="sw">Inaendeshwa kwa umeme 100%, inasaidia kufanya Dar es Salaam iwe safi zaidi</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-battery-full"></i>
+                    <h3 data-lang="en">Long Range</h3>
+                    <h3 data-lang="sw">Umbali Mrefu</h3>
+                    <p data-lang="en">Up to 120km on a single charge</p>
+                    <p data-lang="sw">Inaweza kufika hadi 120km kwa malipo moja</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 data-lang="en">Safety First</h3>
+                    <h3 data-lang="sw">Usalama Kwanza</h3>
+                    <p data-lang="en">Advanced safety features and stability control</p>
+                    <p data-lang="sw">Vipengele vya usalama vya hali ya juu na udhibiti wa uthabiti</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3 data-lang="en">Modern Design</h3>
+                    <h3 data-lang="sw">Muundo wa Kisasa</h3>
+                    <p data-lang="en">Sleek, comfortable, and stylish interior</p>
+                    <p data-lang="sw">Mambo ya ndani mazuri, rahisi, na ya kisasa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-details">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;" data-lang="en">Our Electric Tuk-Tuk</h2>
+            <h2 style="text-align: center; margin-bottom: 40px;" data-lang="sw">Tuk-Tuk Yetu ya Umeme</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="images/tuktuk-product.jpg" alt="Electric Tuk-Tuk">
+                    <div class="product-card-content">
+                        <h3 data-lang="en">Modern Electric Tuk-Tuk</h3>
+                        <h3 data-lang="sw">Tuk-Tuk ya Umeme ya Kisasa</h3>
+                        <p data-lang="en">Our flagship electric three-wheeler designed for urban mobility</p>
+                        <p data-lang="sw">Magari yetu ya magurudumu matatu ya umeme yaliyotengenezwa kwa usafiri wa mjini</p>
+                        <ul style="list-style: none; margin-top: 15px;">
+                            <li><i class="fas fa-check"></i> <span data-lang="en">Passenger capacity: 3-4 people</span><span data-lang="sw">Uwezo wa abiria: watu 3-4</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="en">Maximum speed: 45 km/h</span><span data-lang="sw">Kasi ya juu: 45 km/h</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="en">Charging time: 4-6 hours</span><span data-lang="sw">Muda wa kuchaji: masaa 4-6</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="en">Battery capacity: 72V 100Ah</span><span data-lang="sw">Uwezo wa betri: 72V 100Ah</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="en">Motor power: 3000W</span><span data-lang="sw">Nguvu ya motor: 3000W</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="en">Range: 120km per charge</span><span data-lang="sw">Umbali: 120km kwa malipo moja</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="en">Weight: 350kg</span><span data-lang="sw">Uzito: 350kg</span></li>
+                            <li><i class="fas fa-check"></i> <span data-lang="en">Dimensions: 2.8m x 1.2m x 1.8m</span><span data-lang="sw">Vipimo: 2.8m x 1.2m x 1.8m</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2 data-lang="en">Affordable Daily Rental</h2>
+            <h2 data-lang="sw">Usafirishaji wa Kila Siku kwa Bei Nafuu</h2>
+            <div class="price-tag">TZS 35,000/day</div>
+            <p data-lang="en">Flexible rental terms with no hidden fees</p>
+            <p data-lang="sw">Masharti rahisi ya kukodisha bila malipo yaliyofichwa</p>
+            <div style="margin-top: 30px;">
+                <h3 data-lang="en">Additional Services</h3>
+                <h3 data-lang="sw">Huduma Ziada</h3>
+                <p><i class="fas fa-check"></i> <span data-lang="en">Battery repair service available</span><span data-lang="sw">Huduma ya kurekebisha betri inapatikana</span></p>
+                <p><i class="fas fa-check"></i> <span data-lang="en">Tire recycling program</span><span data-lang="sw">Programu ya kuchakata tena matairi</span></p>
+                <p><i class="fas fa-check"></i> <span data-lang="en">24/7 customer support</span><span data-lang="sw">Usaidizi kwa wateja masaa 24/7</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-info">
+                <h2 data-lang="en">Contact Us</h2>
+                <h2 data-lang="sw">Wasiliana Nasi</h2>
+                <p><i class="fas fa-map-marker-alt"></i> Kawawa Road mkwajuni Kinondoni, Dar es Salaam</p>
+                <p><i class="fas fa-envelope"></i> ztzhl1010@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +255 7641 62625</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="form-section">
+        <div class="container">
+            <div class="registration-form">
+                <h2 style="text-align: center; margin-bottom: 30px;" data-lang="en">Register Your Interest</h2>
+                <h2 style="text-align: center; margin-bottom: 30px;" data-lang="sw">Jisajili Kupata Taarifa Zaidi</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="name" data-lang="en">Full Name *</label>
+                        <label for="name" data-lang="sw">Jina Kamili *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" data-lang="en">Phone Number *</label>
+                        <label for="phone" data-lang="sw">Namba ya Simu *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-lang="en">Email (Optional)</label>
+                        <label for="email" data-lang="sw">Barua Pepe (Hiari)</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <button type="submit" class="submit-btn" data-lang="en">Submit Registration</button>
+                    <button type="submit" class="submit-btn" data-lang="sw">Wasilisha Usajili</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function switchLanguage(lang) {
+            if (lang === 'sw') {
+                document.body.classList.add('swahili');
+            } else {
+                document.body.classList.remove('swahili');
+            }
+        }
+
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            
+            fetch('send_mail.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.message);
+                    this.reset();
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('提交失败，请稍后重试');
+            });
+        });
+    </script>
+</body>
+</html> 
