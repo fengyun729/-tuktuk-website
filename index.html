@@ -289,6 +289,22 @@
         .language-dropdown button[data-lang] {
             display: flex !important;
         }
+
+        /* 表单元素语言切换 */
+        .form-group label[data-lang="sw"],
+        button[data-lang="sw"] {
+            display: none;
+        }
+
+        body.swahili .form-group label[data-lang="sw"],
+        body.swahili button[data-lang="sw"] {
+            display: block;
+        }
+
+        body.swahili .form-group label[data-lang="en"],
+        body.swahili button[data-lang="en"] {
+            display: none;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
